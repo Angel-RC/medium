@@ -1,0 +1,4 @@
+El paquete 0_0_BACKUP_ARCHIVO_DE_DATOS hace el backup diario de todos los directorios y subdirectorios de \\fsaytomadrid02\datosabiertos\ALMACEN_DE_DATOS\
+en c:\TEMP.
+Usa este fichero para reconocer que es un subdirectorio a respaldar. Si alguien lo borra accidentalmente, basta copiar el fichero de otro directorio y pegarlo de nuevo en el directorio que falte.
+GRACIAS
