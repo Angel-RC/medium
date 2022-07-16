@@ -1,0 +1,41 @@
+service: tanatorio-mota
+
+
+frameworkVersion: '3'
+
+provider:
+  name: aws
+  runtime: python3.7
+  region: eu-west-1
+
+
+plugins:
+  - serverless-python-requirements
+  
+custom:
+  pythonRequirements:
+    dockerizePip: true
+    layer:
+      name: layer-telegram-bot
+      description: "Layer para crear bot de telegram"
+      compatibleRuntimes:
+        - python3.7
+        - python3.8
+        - python3.9
+
+functions:
+  cronHandler:
+    layers:
+      - arn:aws:lambda:eu-west-1:884535216886:layer:layer-telegram-bot:4
+      - arn:aws:lambda:eu-west-1:336392948345:layer:AWSDataWrangler-Python37:7
+    timeout: 200
+    handler: handler.run
+    events:
+      - schedule: cron(0 8 * * ? *)
+      - schedule: cron(0 11 * * ? *)
+      - schedule: cron(0 14 * * ? *)
+      - schedule: cron(0 17 * * ? *)
+      - schedule: cron(0 20 * * ? *)
+
+
+	

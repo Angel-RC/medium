@@ -1,0 +1,6 @@
+python-telegram-bot
+beautifulsoup4
+lxml
+boto3
+fsspec
+s3fs
